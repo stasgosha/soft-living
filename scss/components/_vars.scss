@@ -1,0 +1,22 @@
+:root{
+	// Fonts
+	--main-font:  'Alef', Arial, sans-serif;
+	--second-font: 'Shadows Into Light', Arial, sans-serif;
+
+	// Colors
+	--gray: #373737;
+	--gray-rgb: 143, 143, 143;
+
+	// Params
+	--body-bg: #fff; // site background
+	--t: .3s; // animation duration
+	--r: 0; // default border radius
+
+	--text-color: #373737;
+	--text-light: #8F8F8F;
+	--text-dark: #000;
+
+	--primary: var(--gray);
+	--primary-rgb: var(--gray-rgb);
+	--accent: var(--gray);
+}

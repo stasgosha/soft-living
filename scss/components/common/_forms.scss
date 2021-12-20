@@ -1,0 +1,109 @@
+.form{
+	.input-field,
+	textarea{
+		border: 1px solid #c8c8c8;
+		appearance: none;
+		background: transparent;
+		border-radius: 0;
+		flex: auto;
+		height: 50px;
+		font-size: 16px;
+		font-weight: 400;
+		color: var(--primary);
+		font-family: inherit;
+		padding: 0 10px;
+		outline: none !important;
+		transition: all var(--t);
+		width: 100%;
+		box-shadow: none;
+
+		&::placeholder{
+			opacity: 1;
+			color: var(--primary);
+		}
+
+		&:focus{
+			border-color: var(--primary);
+		}
+
+		&.error{
+			border-color: #DB5366;
+		}
+	}
+
+	textarea{
+		resize: none;
+		padding: 15px 10px;
+		height: 174px;
+		display: block;
+	}
+
+	.form-note{
+		font-size: 16px;
+		line-height: 1.2;
+		font-weight: 400;
+	}
+
+	.wpcf7-list-item{
+		margin: 0;
+	}
+
+	p{
+		margin-bottom: 0;
+	}
+
+	@media screen and (max-width: 575px){
+		.form-note{
+			text-align: center;
+			font-size: 14px;
+		}
+	}
+}
+
+.checkbox{
+	position: relative;
+
+	input{
+		~ .fake-label{
+			padding-left: 18px;
+			position: relative;
+			font-size: 13px;
+			line-height: 24px;
+			cursor: pointer;
+			display: block;
+
+			&:before,
+			&:after{
+				content: '';
+				display: block;
+				width: 11px;
+				height: 11px;
+				position: absolute;
+				left: 0;
+				top: 7px;
+				transition: all var(--t);
+			}
+
+			&:before{
+				border: 1px solid var(--text-color);
+			}
+
+			&:after{
+				background: url("data:image/svg+xml,%3Csvg fill='none' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 11 11'%3E%3Cpath d='m8.22 2.95-.39.38C6.77 4.36 5.65 5.53 4.6 6.57L3.13 5.4l-.42-.33-.7.81.42.34L4.28 7.7l.39.3.34-.33c1.17-1.14 2.44-2.48 3.59-3.6l.38-.37-.76-.75Z' fill='%23fff'/%3E%3C/svg%3E") no-repeat center center / contain;
+				opacity: 0;
+			}
+		}
+
+		&:checked{
+			~ .fake-label{
+				&:before{
+					background: var(--text-color);
+				}
+
+				&:after{
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

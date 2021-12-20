@@ -1,0 +1,32 @@
+.top-products-section{
+	padding: 22px 0 17px;
+}
+
+.products-grid{
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 40px 20px;
+	margin-bottom: 40px;
+
+	&.columns-2{
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.wide{
+		grid-column: 1 / -1;
+	}
+}
+
+.products-slider{
+	--slider-arrow-base-shift: -49px;
+
+	&:not(.small){
+		width: calc(100% + 10px * 2);
+		margin-left: -10px;
+		margin-right: -10px;
+		
+		.slide{
+			padding: 0 10px;
+		}
+	}
+}

@@ -1,0 +1,20 @@
+.about-section{
+	padding: 25px 0;
+
+	.section-header{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 50px;
+		border-bottom: 1px solid #EBEBEB;
+		padding-bottom: 25px;
+	}
+
+	.section-caption{
+		margin-bottom: 0;
+
+		.sc-title{
+			text-align: start;
+		}
+	}
+}

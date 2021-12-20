@@ -1,0 +1,32 @@
+@import "components/fonts";
+@import "components/vars";
+@import "components/assist";
+@import "components/layout";
+@import "components/typography";
+@import "icons";
+
+// Header
+@import "components/header/header";
+
+// Footer
+@import "components/footer/footer";
+ 
+// Common
+@import "components/common/buttons";
+@import "components/common/forms";
+// @import "components/common/tables";
+@import "components/common/sliders";
+@import "components/common/modals";
+@import "components/common/menu-opener";
+// @import "components/common/accordions";
+@import "components/common/breadcrumbs";
+@import "components/common/product-card";
+
+// Sections
+@import "components/sections/first-screen-section";
+@import "components/sections/categories-section";
+@import "components/sections/top-products-section";
+@import "components/sections/instagram-section";
+@import "components/sections/sub-category-section";
+@import "components/sections/page-first-screen-section";
+@import "components/sections/about-section";
