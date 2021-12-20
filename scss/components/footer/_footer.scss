@@ -72,7 +72,6 @@
 			width: 100%;
 			margin-bottom: 23px;
 
-			&:hover,
 			&:focus{
 				border-bottom-color: #373737;
 				outline: none;
@@ -80,6 +79,7 @@
 
 			&::placeholder{
 				color: var(--text-light);
+				opacity: 1;
 			}
 		}
 

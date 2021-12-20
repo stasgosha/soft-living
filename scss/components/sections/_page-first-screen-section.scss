@@ -1,5 +1,5 @@
 .page-first-screen-section{
-	padding: 38px 0 20px;
+	padding: 38px 0 25px;
 
 	.section-image{
 		position: relative;
@@ -19,6 +19,43 @@
 			display: block;
 			object-fit: cover;
 			object-position: center center;
+		}
+	}
+
+	.section-map{
+		position: relative;
+		
+		&:before{
+			content: '';
+			display: block;
+			padding-top: 29.5%;
+		}
+		
+		iframe{
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: block;
+			object-fit: cover;
+			object-position: center center;
+		}
+	}
+}
+
+.default-section-header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #EBEBEB;
+	padding: 25px 0;
+
+	.section-caption{
+		margin-bottom: 0;
+
+		.sc-title{
+			text-align: start;
 		}
 	}
 }

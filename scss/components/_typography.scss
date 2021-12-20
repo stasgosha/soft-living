@@ -16,14 +16,12 @@
 
 @mixin h3{
 	font-size: 18px;
-	line-height: 20px;
-	font-weight: 500;
+	line-height: 1.1;
+	font-weight: 700;
 }
 
 @mixin h4{
-	font-weight: 600;
-	font-size: 20px;
-	line-height: 1.25;
+	@include h3;
 }
 
 @mixin small-caption{
@@ -38,19 +36,29 @@
 	grid-gap: 8px;
 
 	li{
-		padding-left: 16px;
+		padding-left: 12px;
 		position: relative;
 
 		&:before{
 			content: '';
 			display: block;
-			width: 6px;
-			height: 6px;
+			width: 4px;
+			height: 4px;
 			border-radius: 50%;
 			background: var(--primary);
 			position: absolute;
 			left: 0;
-			top: 0.65em;
+			top: 0.45em;
+		}
+
+		html[dir="rtl"] &{
+			padding-left: 0;
+			padding-right: 12px;
+
+			&:before{
+				left: auto;
+				right: 0;
+			}
 		}
 	}
 }
@@ -60,6 +68,116 @@ body{
 	color: var(--text-color);
 
 	@include p;
+}
+
+.tpg{
+	@include p;
+
+	p{
+		margin-bottom: 1.3em;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	a{
+		color: #648FFF;
+		text-decoration: underline;
+
+		&:hover,
+		&:focus{
+			color: var(--text-dark);
+			text-decoration: none;
+		}
+	}
+
+	h1,h2{
+		@include h2;
+		margin-bottom: 0.8em;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	h3,h4,h5{
+		@include h3;
+		margin-bottom: 1em;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	ul{
+		@include default-ul;
+		margin-bottom: 1.3em;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	ol{
+		counter-reset: ol;
+		margin-bottom: 1.3em;
+		display: grid;
+		grid-gap: 8px;
+
+		&:last-child{
+			margin-bottom: 0;
+		}
+
+		li{
+			counter-increment: ol;
+			padding: 0 !important;
+
+			&:before{
+				position: static;
+				display: inline-block;
+				content: counter(ol)'. ';
+				font-weight: bold;
+			}
+		}
+	}
+
+	img{
+		max-width: 100%;
+		height: auto;
+		display: block;
+
+		&.alignleft{
+			float: left;
+			margin-right: 30px;
+			margin-bottom: 20px;
+		}
+
+		&.alignright{
+			float: right;
+			margin-left: 30px;
+			margin-bottom: 20px;
+		}
+
+		&.aligncenter{
+			margin-left: auto;
+			margin-right: auto;
+			float: none;
+			margin-bottom: 30px;
+			clear: both;
+		}
+
+		@media screen and (max-width: 767px){
+			&.alignleft,
+			&.alignright,
+			&.aligncenter{
+				float: none;
+				margin-left: auto;
+				margin-right: auto;
+				margin-bottom: 30px;
+			}
+		}
+	}
 }
 
 .section-caption{
@@ -78,6 +196,13 @@ body{
 		@include p;
 		margin-top: 13px;
 	}
+}
+
+.small-caption{
+	font-size: 16px;
+	line-height: 1.3;
+	font-weight: bold;
+	margin-bottom: 17px;
 }
 
 .main-font{

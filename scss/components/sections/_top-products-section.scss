@@ -1,5 +1,9 @@
 .top-products-section{
 	padding: 22px 0 17px;
+
+	&.big-bottom-padding{
+		padding-bottom: 40px;
+	}
 }
 
 .products-grid{

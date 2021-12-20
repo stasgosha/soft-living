@@ -1,0 +1,67 @@
+.contacts-section{
+	padding: 25px 0 0;
+
+	.section-inner{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 40px;
+		padding-bottom: 50px;
+		border-bottom: 1px solid #EBEBEB;
+	}
+}
+
+.contacts-list{
+	display: grid;
+	grid-gap: 20px;
+	font-size: 16px;
+	line-height: 1.25;
+
+	li{
+		display: grid;
+		grid-template-columns: 20px 1fr;
+		grid-gap: 6px;
+		align-items: center;
+
+		.item-icon{
+			img{
+				width: 20px;
+				height: 20px;
+				object-fit: contain;
+				object-position: center center;
+				display: block;
+			}
+		}
+
+		a{
+			color: inherit;
+
+			&:hover,
+			&:focus{
+				text-decoration: underline;
+			}
+
+			&[href^="mailto"]{
+				text-decoration: underline;
+
+				&:hover,
+				&:focus{
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+.contacts-form{
+	.form-fields{
+		display: grid;
+		grid-gap: 12px;
+		margin-bottom: 21px;
+	}
+
+	.form-footer{
+		.btn{
+			width: 100%;
+		}
+	}
+}

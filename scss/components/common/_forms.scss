@@ -1,33 +1,28 @@
 .form{
 	.input-field,
 	textarea{
-		border: 1px solid #c8c8c8;
+		display: block;
 		appearance: none;
-		background: transparent;
-		border-radius: 0;
-		flex: auto;
-		height: 50px;
-		font-size: 16px;
-		font-weight: 400;
-		color: var(--primary);
-		font-family: inherit;
-		padding: 0 10px;
-		outline: none !important;
-		transition: all var(--t);
-		width: 100%;
+		border: 0;
 		box-shadow: none;
-
-		&::placeholder{
-			opacity: 1;
-			color: var(--primary);
-		}
+		border-radius: 0;
+		border-bottom: 1px solid #D1D1D1;
+		transition: all var(--t);
+		height: 29px;
+		width: 100%;
 
 		&:focus{
-			border-color: var(--primary);
+			border-bottom-color: #373737;
+			outline: none;
 		}
 
 		&.error{
-			border-color: #DB5366;
+			border-bottom-color: #DB5366;
+		}
+
+		&::placeholder{
+			opacity: 1;
+			color: var(--text-light);
 		}
 	}
 
