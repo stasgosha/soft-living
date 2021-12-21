@@ -4,18 +4,19 @@
 	width: 20px;
 	height: 20px;
 	justify-content: center;
-	align-items: center;
+	align-items: flex-start;
 	cursor: pointer;
 	appearance: none;
 	background: transparent;
 	position: relative;
+	color: inherit;
 
-	--gap: 5px;
+	--gap: 2px;
 	--bar-width: 20px;
 	--bar-height: 2px;
-	--bar-fill: #3a3a3a;
-	--bar-fill-hover: #{ var(--primary) };
-	--bar-radius: 1px;
+	--bar-fill: currentColor;
+	--bar-fill-hover: #fff;
+	--bar-radius: 0;
 
 	&:before{
 		content: '';
@@ -39,6 +40,7 @@
 
 		&:last-child{
 			margin-bottom: 0;
+			width: 50%;
 		}
 
 		&:nth-child(2){

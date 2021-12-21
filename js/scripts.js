@@ -58,6 +58,10 @@ document.addEventListener('DOMContentLoaded', function(){
 		}
 	}
 
+	if ($(window).width() < 768) {
+		$('.single-product-section .section-accordions .accordion:not(:first-child)').removeClass('opened-on-load');
+	}
+
 	$('.accordion, .js-accordion').each(function(i, el){
 		$(el).find('.ac-opener').attr({
 			'aria-expanded': 'false',
@@ -73,6 +77,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		if ($(el).hasClass('opened-on-load')) {
 			$(el).find('.ac-header').trigger('click');
+		}
+	});
+
+	$('.product-variations .small-caption').click(function(e){
+		if ($(window).width() < 768) {
+			$(this).toggleClass('opened').siblings('.variations-list-wrapper').stop().slideToggle(300);
 		}
 	});
 
@@ -123,6 +133,10 @@ document.addEventListener('DOMContentLoaded', function(){
 			}
 		});
 	}
+
+	$('.filters-component .cmp-group .group-caption').click(function(e){
+		$(this).toggleClass('opened').siblings('.group-list').stop().slideToggle(300);
+	});
 
 	// Tabs
 	// function goToTab(tabId, handler){
@@ -244,6 +258,14 @@ document.addEventListener('DOMContentLoaded', function(){
 						settings: {
 							slidesToShow: 2
 						}
+					},
+					{
+						breakpoint: 576,
+						settings: {
+							slidesToShow: 2,
+							arrows: false,
+							dots: true
+						}
 					}
 				]
 			}
@@ -300,8 +322,8 @@ document.addEventListener('DOMContentLoaded', function(){
 
 		let topNavHeight = 57;
 
-		if ($(window).width() < 440) {
-			topNavHeight = 56;
+		if ($(window).width() < 992) {
+			topNavHeight = 40;
 		}
 
 		$('html, body').animate({
@@ -319,10 +341,19 @@ document.addEventListener('DOMContentLoaded', function(){
 	});
 
 	$('.mobile-top-nav').each(function(i, el){
-		$(el).find('.menu-item-has-children > a').click(function(e){
+		$(el).find('.menu-item-has-children').click(function(e){
 			e.preventDefault();
 
-			$(this).toggleClass('opened').siblings('.sub-menu').stop().slideToggle(300);
+			$(this).toggleClass('opened');
+			$(this).find('.sub-menu').stop().slideToggle(300);
+		});
+
+		$(el).find('.menu-item-has-children > a').click(function(e){
+			e.preventDefault();
+		});
+
+		$(el).find('.menu-item-has-children .sub-menu').click(function(e){
+			e.stopPropagation();
 		});
 	});
 

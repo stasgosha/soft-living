@@ -40,6 +40,11 @@
 		&:focus{
 			stroke: #000;
 		}
+
+		@media screen and (max-width: 767px){
+			width: 14px;
+			height: 25px;
+		}
 	}
 
 	&:before{
@@ -74,18 +79,19 @@
 	.small-buttons &{
 		width: 44px;
 		height: 44px;
-		background: #fff;
-		border: 1px solid #fff;
+		// background: #fff;
+		// border: 1px solid #fff;
 		transition: all var(--t);
 
 		svg{
 			width: 9px;
 			height: 17px;
+			stroke: #fff;
 		}
 
 		&:hover,
 		&:focus{
-			border-color: var(--text-color);
+			// border-color: var(--text-color);
 		}
 	}
 }

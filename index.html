@@ -15,7 +15,8 @@
 <body>
 	<div class="wrapper" id="top">
 		<header class="header">
-			<div class="header-row first">
+			<!-- Шапка может быть белой - нужно добавить чекбокс, который будет добавлять класс white к header-row first -->
+			<div class="header-row first white">
 				<div class="container wide">
 					<div class="header-inner">
 						<div class="header-block">
@@ -29,7 +30,24 @@
 							<p class="delivery-text">משלוחים לכל הארץ</p>
 						</div>
 						<div class="header-block">
-							<a href="#" class="lang-link">EN</a>
+							<ul class="shop-nav sm-visible-flex">
+								<li>
+									<a href="#" aria-label="Go to Cart">
+										<span class="link-count">4</span>
+										<svg class="link-icon">
+											<use xlink:href="img/icons-sprite.svg#bag"></use>
+										</svg>
+									</a>
+								</li>
+								<li>
+									<a href="#" aria-label="Favourites">
+										<svg class="link-icon">
+											<use xlink:href="img/icons-sprite.svg#heart"></use>
+										</svg>
+									</a>
+								</li>
+							</ul>
+							<a href="#" class="lang-link sm-visible-on-opened">EN</a>
 						</div>
 					</div>
 				</div>
@@ -37,7 +55,7 @@
 			<div class="header-row second">
 				<div class="container wide">
 					<div class="header-inner">
-						<div class="header-block">
+						<div class="header-block sm-hidden">
 							<div class="header-search-form">
 								<form action="">
 									<input type="text" placeholder="חיפוש..." class="search-field">
@@ -50,7 +68,7 @@
 								<img src="img/logo.png" alt="Soft Living">
 							</a>
 						</div>
-						<div class="header-block">
+						<div class="header-block sm-hidden">
 							<ul class="shop-nav">
 								<li>
 									<a href="#" aria-label="Go to Cart">
@@ -72,7 +90,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="header-row third">
+			<div class="header-row third md-hidden">
 				<div class="container">
 					<nav class="top-nav">
 						<ul>
@@ -128,6 +146,70 @@
 					</nav>
 				</div>
 			</div>
+
+			<nav class="mobile-top-nav">
+				<div class="nav-inner">
+					<div class="container">
+						<div class="header-search-form sm-visible-flex">
+							<form action="">
+								<input type="text" placeholder="חיפוש..." class="search-field">
+								<button type="submit" aria-label="לחפש" class="search-button"></button>
+							</form>
+						</div>
+						
+						<ul class="mobile-nav">
+							<li><a href="#">צור קשר</a></li>
+							<li class="menu-item-has-children">
+								<a href="#">הסיפור שלנו </a>
+								<ul class="sub-menu">
+									<li><a href="#">פלורנטין </a></li>
+									<li><a href="#">קורדרוי אפורים </a></li>
+									<li><a href="#">קורדרוי צבעוני </a></li>
+									<li><a href="#">הדפסים צבעוני</a></li>
+									<li><a href="#">ג׳ינס</a></li>
+									<li><a href="#">ינתא הפיטק</a></li>
+									<li><a href="#">תוכיסנ תטימ</a></li>
+									<li><a href="#">תודדוב תודיחי</a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#">התאמה אישית אתנחתא </a>
+								<ul class="sub-menu">
+									<li><a href="#">אואזיס </a></li>
+									<li><a href="#">אואזיס פינתי </a></li>
+									<li><a href="#">סטודיו + יסמין </a></li>
+									<li><a href="#">סטודיו ללא גב </a></li>
+									<li><a href="#">הדום </a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#">פריטים מתצוגה </a>
+								<ul class="sub-menu">
+									<li><a href="#">קורדרוי אפורים </a></li>
+									<li><a href="#">קורדרוי קאמל</a></li>
+									<li><a href="#">קורדרוי צבעוני </a></li>
+									<li><a href="#">ג'ינס </a></li>
+								</ul>
+							</li>
+							<li class="menu-item-has-children">
+								<a href="#">כריות ואביזרים </a>
+								<ul class="sub-menu">
+									<li><a href="#">כריות קורדרוי </a></li>
+									<li><a href="#">כריות צבעוני </a></li>
+									<li><a href="#">כריות גב יסמין </a></li>
+									<li><a href="#">הדום </a></li>
+									<li><a href="#">מגשי פרספקס</a></li>
+									<li><a href="#">שרפרף ארוג ״עיינה״</a></li>
+								</ul>
+							</li>
+							<li><a href="#">ספה מיטה </a></li>
+							<li><a href="#">יחידות בודדות </a></li>
+							<li><a href="#">פינות סטודיו </a></li>
+							<li><a href="#">פינות אואזיס</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
 		</header>
 		<main class="page-content">
 			<section class="first-screen-section small-buttons">
@@ -136,26 +218,26 @@
 						<div class="slide">
 							<div class="first-screen-card">
 								<picture class="card-bg">
-									<source srcset="img/content-images/first-screen-slider/slide-1.jpg" media="(max-width: 991px)" />
+									<!-- Везде, где есть такая конструкция - нужно сделать выбор картинки для мобильных -->
+									<source srcset="img/content-images/first-screen-slider/slide-1.jpg" media="(max-width: 575px)" />
 									<img src="img/content-images/first-screen-slider/slide-1.jpg" alt="">
 								</picture>
 								<div class="card-content">
 									<!-- У .card-caption может быть класс main-font, который будет менять шрифт - нужно добавить чекбокс в админке -->
 									<h3 class="card-caption">Soft lifestyle</h3>
-									<!-- Кнопка может быть черной или белой (класс .btn-white) -->
-									<a href="#" class="btn btn-stroke btn-white">shop now</a>
+									<a href="#" class="btn">shop now</a>
 								</div>
 							</div>
 						</div>
 						<div class="slide">
 							<div class="first-screen-card">
 								<picture class="card-bg">
-									<source srcset="img/content-images/first-screen-slider/slide-1.jpg" media="(max-width: 991px)" />
+									<source srcset="img/content-images/first-screen-slider/slide-1.jpg" media="(max-width: 575px)" />
 									<img src="img/content-images/first-screen-slider/slide-1.jpg" alt="">
 								</picture>
 								<div class="card-content">
 									<h3 class="card-caption">Slide 2 Title</h3>
-									<a href="#" class="btn btn-stroke">shop now</a>
+									<a href="#" class="btn">shop now</a>
 								</div>
 							</div>
 						</div>
@@ -168,7 +250,7 @@
 					<div class="categories-grid">
 						<div class="category-card">
 							<picture class="card-bg">
-								<!-- <source srcset="" media="(max-width: 991px)" /> -->
+								<!-- <source srcset="" media="(max-width: 575px)" /> -->
 								<img src="img/content-images/categories/category-1.jpg" alt="">
 							</picture>
 							<div class="card-content">
@@ -178,7 +260,7 @@
 
 						<div class="category-card">
 							<picture class="card-bg">
-								<!-- <source srcset="" media="(max-width: 991px)" /> -->
+								<!-- <source srcset="" media="(max-width: 575px)" /> -->
 								<img src="img/content-images/categories/category-2.jpg" alt="">
 							</picture>
 							<div class="card-content">
@@ -241,7 +323,7 @@
 
 						<div class="category-card with-text">
 							<picture class="card-bg">
-								<!-- <source srcset="" media="(max-width: 991px)" /> -->
+								<!-- <source srcset="" media="(max-width: 575px)" /> -->
 								<img src="img/content-images/categories/category-3.jpg" alt="">
 							</picture>
 							<div class="card-content">
@@ -255,7 +337,7 @@
 
 						<div class="category-card">
 							<picture class="card-bg">
-								<!-- <source srcset="" media="(max-width: 991px)" /> -->
+								<!-- <source srcset="" media="(max-width: 575px)" /> -->
 								<img src="img/content-images/categories/category-4.jpg" alt="">
 							</picture>
 							<div class="card-content">
@@ -265,7 +347,7 @@
 
 						<div class="category-card">
 							<picture class="card-bg">
-								<!-- <source srcset="" media="(max-width: 991px)" /> -->
+								<!-- <source srcset="" media="(max-width: 575px)" /> -->
 								<img src="img/content-images/categories/category-5.jpg" alt="">
 							</picture>
 							<div class="card-content">
@@ -275,7 +357,7 @@
 
 						<div class="category-card wide with-text">
 							<picture class="card-bg">
-								<!-- <source srcset="" media="(max-width: 991px)" /> -->
+								<!-- <source srcset="" media="(max-width: 575px)" /> -->
 								<img src="img/content-images/categories/category-6.jpg" alt="">
 							</picture>
 							<div class="card-content">
@@ -288,7 +370,7 @@
 
 						<div class="category-card">
 							<picture class="card-bg">
-								<!-- <source srcset="" media="(max-width: 991px)" /> -->
+								<!-- <source srcset="" media="(max-width: 575px)" /> -->
 								<img src="img/content-images/categories/category-7.jpg" alt="">
 							</picture>
 							<div class="card-content">
@@ -298,7 +380,7 @@
 
 						<div class="category-card">
 							<picture class="card-bg">
-								<!-- <source srcset="" media="(max-width: 991px)" /> -->
+								<!-- <source srcset="" media="(max-width: 575px)" /> -->
 								<img src="img/content-images/categories/category-8.jpg" alt="">
 							</picture>
 							<div class="card-content">
@@ -308,7 +390,7 @@
 
 						<div class="category-card">
 							<picture class="card-bg">
-								<!-- <source srcset="" media="(max-width: 991px)" /> -->
+								<!-- <source srcset="" media="(max-width: 575px)" /> -->
 								<img src="img/content-images/categories/category-9.jpg" alt="">
 							</picture>
 							<div class="card-content">
@@ -318,7 +400,7 @@
 
 						<div class="category-card">
 							<picture class="card-bg">
-								<!-- <source srcset="" media="(max-width: 991px)" /> -->
+								<!-- <source srcset="" media="(max-width: 575px)" /> -->
 								<img src="img/content-images/categories/category-10.jpg" alt="">
 							</picture>
 							<div class="card-content">

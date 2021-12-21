@@ -1,5 +1,9 @@
 .first-screen-section{
 	padding: 38px 0 27px;
+
+	@media screen and (max-width: 991px){
+		padding-top: 0;
+	}
 }
 
 .first-screen-slider{
@@ -37,6 +41,14 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
+
+		.btn{
+			position: absolute;
+			width: 180px;
+			left: calc(50% - 180px / 2);
+			bottom: 40px;
+			min-width: unset;
+		}
 	}
 
 	.card-label{
@@ -55,12 +67,13 @@
 	}
 
 	.card-caption{
-		font-size: 45px;
+		font-size: 54px;
 		line-height: 1.1;
 		font-family: var(--second-font);
 		color: #fff;
 		font-weight: 400;
-		margin-bottom: 34px;
+		// margin-bottom: 34px;
+		margin-bottom: 0;
 		text-shadow: 0px 4px 7px rgba(25, 25, 27, 0.1);
 
 		&:last-child{
@@ -69,6 +82,31 @@
 
 		&.main-font{
 			font-weight: bold;
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		.card-caption{
+			font-size: 50px;
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		.card-caption{
+			margin-bottom: 0;
+		}
+
+		.card-content{
+			height: 467px;
+			padding: 44px;
+
+			.btn{
+				position: absolute;
+				width: 180px;
+				left: calc(50% - 180px / 2);
+				bottom: 50px;
+				min-width: unset;
+			}
 		}
 	}
 }

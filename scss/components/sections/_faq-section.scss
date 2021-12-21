@@ -7,4 +7,21 @@
 		grid-gap: 20px;
 		align-items: start;
 	}
+
+	@media screen and (max-width: 991px){
+		.faq-grid{
+			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		padding-top: 0;
+	}
+
+	@media screen and (max-width: 575px){
+		.faq-grid{
+			grid-template-columns: 1fr;
+			grid-gap: 0;
+		}
+	}
 }

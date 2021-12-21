@@ -3,9 +3,14 @@
 
 	.card-image{
 		position: relative;
-		height: 340px;
 		width: 100%;
 		overflow: hidden;
+
+		&:before{
+			content: '';
+			display: block;
+			padding-top: 96.98%;
+		}
 
 		img{
 			width: 100%;
@@ -24,10 +29,10 @@
 		padding-top: 11px;
 	}
 
-	.card-caption{
+	.card-name{
 		font-size: 16px;
 		line-height: 1.1;
-		font-weight: bold;
+		font-weight: 400;
 		margin-bottom: 5px;
 		color: var(--text-light);
 	}

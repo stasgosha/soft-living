@@ -61,8 +61,12 @@ picture, iframe, figure{
 	.page-content{
 		padding-top: 187px;
 
-		@media screen and (max-width: 575px){
-			padding-top: 50px;
+		@media screen and (max-width: 991px){
+			padding-top: 138px;
+		}
+
+		@media screen and (max-width: 767px){
+			padding-top: 144px;
 		}
 	}
 
@@ -73,20 +77,20 @@ picture, iframe, figure{
 
 .container{
 	width: 100%;
-	padding: 0 35px;
+	padding: 0 15px;
 	margin: 0 auto;
 
 	@media screen and (min-width: 576px){
-		padding: 0 20px;
-		max-width: 570px;
+		max-width: 540px;
 	}
 
 	@media screen and (min-width: 768px){
-		max-width: 760px;
+		padding: 0 20px;
+		max-width: 730px;
 	}
 
 	@media screen and (min-width: 992px){
-		max-width: 990px;
+		max-width: 940px;
 	}
 
 	@media screen and (min-width: 1030px){

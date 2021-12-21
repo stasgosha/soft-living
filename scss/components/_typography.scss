@@ -196,6 +196,10 @@ body{
 		@include p;
 		margin-top: 13px;
 	}
+
+	@media screen and (max-width: 767px){
+		margin-bottom: 10px;
+	}
 }
 
 .small-caption{

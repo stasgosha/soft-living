@@ -8,6 +8,20 @@
 		padding-bottom: 50px;
 		border-bottom: 1px solid #EBEBEB;
 	}
+
+	@media screen and (min-width: 768px){
+		.section-form{
+			margin-top: -7px;
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		padding-top: 0;
+
+		.section-inner{
+			grid-template-columns: 1fr;
+		}
+	}
 }
 
 .contacts-list{
@@ -41,6 +55,7 @@
 			}
 
 			&[href^="mailto"]{
+				font-size: 13px;
 				text-decoration: underline;
 
 				&:hover,

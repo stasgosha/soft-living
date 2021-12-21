@@ -1,13 +1,13 @@
 .btn{
-	--btn-bg: var(--primary);
-	--btn-hover-bg: transparent;
+	--btn-bg: transparent;
+	--btn-hover-bg: var(--text-color);
 	--btn-color: #fff;
 
 	text-align: center;
 	padding: 10px 44px;
 	min-height: 49px;
 
-	border: 1px solid var(--btn-bg);
+	border: 1px solid #fff;
 	border-radius: 0;
 
 	display: inline-flex;
@@ -29,39 +29,29 @@
 	line-height: 1.1;
 	font-weight: 700;
 
+	@media screen and (max-width: 575px){
+		font-size: 13px;
+		padding: 10px 15px;
+		min-height: 37px;
+	}
+
 	&:hover,
 	&:focus{
 		outline: none;
-		background: var(--btn-hover-bg);
-		border: 1px solid #fff;
-	}
+		// background: #fff;
+		// border: 1px solid #fff;
 
-	&.btn-stroke{
-		background: transparent;
-		color: var(--btn-bg);
-
-		&:hover,
-		&:focus{
-			color: #fff;
-		}
-
-		&.btn-white{
-			border-color: #fff;
-			color: #fff;
-
-			&:hover,
-			&:focus{
-				background: #fff;
-				color: var(--text-color);
-			}
-		}
+		transform: scale(1.025);
 	}
 
 	&.btn-dark{
+		background: var(--text-color);
+		border-color: var(--text-color);
+
 		&:hover,
 		&:focus{
-			color: var(--text-color);
-			border-color: var(--text-color);
+			// color: var(--text-color);
+			// border-color: var(--text-color);
 		}
 	}
 }

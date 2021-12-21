@@ -1,14 +1,28 @@
 .categories-section{
 	padding: 27px 0 22px;
+
+	@media screen and (max-width: 767px){
+		padding-top: 0;
+		padding-bottom: 0;
+	}
 }
 
 .categories-grid{
+	--gap: 40px;
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 40px;
+	grid-template-columns: calc(50% - var(--gap) / 2) calc(50% - var(--gap) / 2);
+	grid-gap: var(--gap);
 
 	.wide{
 		grid-column: 1 / -1;
+	}
+
+	@media screen and (max-width: 1029px){
+		--gap: 20px;
+	}
+
+	@media screen and (max-width: 767px){
+		--gap: 15px;
 	}
 }
 
@@ -62,6 +76,25 @@
 
 		.btn{
 			min-width: 178px;
+			padding-left: 20px;
+			padding-right: 20px;
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		.card-content{
+			padding: 30px;
+		}
+	}
+
+	@media screen and (max-width: 575px){
+		.card-content{
+			padding: 15px;
+
+			.btn{
+				min-width: unset;
+				width: 100%;
+			}
 		}
 	}
 
@@ -114,23 +147,85 @@
 			background: rgba(#fff, .5);
 			border-radius: 50%;
 		}
+
+		@media screen and (max-width: 767px){
+			top: 12px;
+			right: 40px;
+		}
+
+		@media screen and (max-width: 575px){
+			width: 48px;
+			height: 48px;
+			font-size: 12px;
+		}
 	}
 
 	&.with-text{
 		.card-content{
 			justify-content: center;
 		}
+
+		@media screen and (max-width: 767px){
+			grid-column: 1 / -1;
+		}
+
+		@media screen and (max-width: 575px){
+			position: relative;
+
+			.card-bg{
+				width: 100%;
+				height: 100%;
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+
+			.card-content{
+				padding: 50px;
+				position: relative;
+				z-index: 2;
+
+				.btn{
+					max-width: 180px;
+				}
+			}
+
+			&.wide{
+				min-height: 220px;
+
+				.btn{
+					min-height: 49px;
+				}
+			}
+		}
 	}
 }
 
 .category-slider-card{
+	position: relative;
+	display: flex;
+
 	.products-slider{
-		max-width: 351px;
 		margin-left: auto;
 		margin-right: auto;
+		max-width: calc(100% - 62px * 2);
+		--slider-arrow-base-shift: -62px;
 
 		.slick-arrow{
 			top: 170px;
 		}
+
+		@media screen and (max-width: 991px){
+			max-width: calc(100% - 47px * 2);
+			--slider-arrow-base-shift: -47px;
+
+			.slick-arrow{
+				top: calc(50% - 42px / 2);
+			}
+		}
+	}
+
+	@media screen and (max-width: 767px){
+		grid-column: 1 / -1;
 	}
 }

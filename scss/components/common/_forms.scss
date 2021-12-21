@@ -10,6 +10,8 @@
 		transition: all var(--t);
 		height: 29px;
 		width: 100%;
+		font-family: inherit;
+		font-size: inherit;
 
 		&:focus{
 			border-bottom-color: #373737;
@@ -23,6 +25,11 @@
 		&::placeholder{
 			opacity: 1;
 			color: var(--text-light);
+		}
+
+		@media screen and (max-width: 767px){
+			font-size: 16px;
+			height: 32px;
 		}
 	}
 
