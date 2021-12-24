@@ -67,7 +67,7 @@
 	}
 
 	.card-caption{
-		font-size: 54px;
+		font-size: 65px;
 		line-height: 1.1;
 		font-family: var(--second-font);
 		color: #fff;
@@ -82,6 +82,12 @@
 
 		&.main-font{
 			font-weight: bold;
+		}
+	}
+
+	@media screen and (max-width: 991px){
+		.card-caption{
+			font-size: 54px;
 		}
 	}
 
@@ -102,8 +108,8 @@
 
 			.btn{
 				position: absolute;
-				width: 180px;
-				left: calc(50% - 180px / 2);
+				width: 140px;
+				left: calc(50% - 140px / 2);
 				bottom: 50px;
 				min-width: unset;
 			}
